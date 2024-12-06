@@ -13,8 +13,9 @@ async function fetchNews(query = '') {
     const newsContainer = document.getElementById('news-container');
     newsContainer.innerHTML = '<p>Error loading news. Please try again later.</p>';
 }
+}
 
-
+//Display news articles
 function displayNews(articles) {
     const newsContainer = document.getElementById('news-container');
     newsContainer.innerHTML = '';
@@ -26,7 +27,7 @@ function displayNews(articles) {
         const newsItem = `
         <div class="news-item">
         <h3>${article.title}</h3>
-        <p>${article.description || ''}</p>
+        <p>${article.description || 'No description available'}</p>
         <a href="${article.url}" target="_blank">Read More</a>
         </div>
         `;
@@ -34,4 +35,3 @@ function displayNews(articles) {
     });
 }
 fetchNews();
-}
