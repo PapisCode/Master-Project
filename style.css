@@ -111,3 +111,10 @@ input:focus, select:focus {
     transform: scale(1.02);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
+
+.news-item h3 {
+margin: 0;
+font-size: 1.5rem;
+color: #3a3d5e;
+text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
