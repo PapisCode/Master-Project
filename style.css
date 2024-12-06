@@ -123,3 +123,14 @@ text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 font-size: 1rem;
 color: #666;
 }
+
+.news-item a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #6c63ff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+
+
