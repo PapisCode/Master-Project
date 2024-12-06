@@ -35,3 +35,12 @@ color: #ffd700;
 transform: scale(1.1);
 }
 
+/* Main content */
+main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
