@@ -44,3 +44,15 @@ main {
     gap: 40px;
 }
 
+section {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+    transform: perspective(500px) rotate(1deg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
