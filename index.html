@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Project</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>World Info</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+        </nav>
+    </header>
+    <main>
+        <section id="currency">
+        <h2>Currency Conversion</h2>
+        <div id="currency-form">
+            <input type="number" id="amount" placeholder="Amount">
+            <select id="from-currency"></select>
+            <select id="to-currency"></select>
+            <button id="convert-btn">Convert</button>
+            <p id="conversion-result"></p>
+        </div>
+        <canvas id="currency-chart"></canvas>
+    </section>
+    <section id="news">
+        <h2>World News</h2>
+        <input type="text" id="news-search" placeholder="Search News">
+        <div id="news-container"></div>
+    </section>
+    </main>
+    <footer>
+        <p>&copy; 2021 Master Project</p>
+    </footer>
+    <script src="js/script.js"></script>
+    <script src="js/currency.js"></script>
+    <script src="js/news.js"></script>
+</body>
+</html>
