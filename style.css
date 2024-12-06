@@ -133,4 +133,17 @@ color: #666;
     transition: color 0.2s ease;
 }
 
+.news-item a:hover {
+    color: #3a3d5e;
+}
 
+/* Footer */
+
+footer {
+    background: #3a3d5e;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+    border-top: 4px solid #2c2f48;
+}
