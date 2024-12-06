@@ -5,3 +5,11 @@ async function fetchCurrencies() {
     populateCurrencyDropdown(data.rates);
 }
 
+function populateCurrencyDropdown(rates) {
+    const fromCurrency = document.getElementById('from-currency');
+    const toCurrency = document.getElementById('to-currency');
+    Object.keys(rates).forEach(currency => {
+        fromCurrency.innerHTML += `<option value="${currency}">${currency}</option>`;
+        toCurrency.innerHTML += `<option value="${currency}">${currency}</option>`;
+    });
+}
