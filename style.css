@@ -79,3 +79,11 @@ button, input, select {
     outline: none;
 }
 
+button {
+    background: linear-gradient(135deg, #6c63ff, #8e8dfb);
+    color: #fff;
+    cursor: pointer;
+    border-bottom: 4px solid #5b57e6;
+    text-transform: uppercase;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
