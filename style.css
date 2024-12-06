@@ -30,3 +30,8 @@ nav a {
     transition: transform 0.2s ease, color 0.2s ease;
 }
 
+nav a:hover {
+color: #ffd700;
+transform: scale(1.1);
+}
+
