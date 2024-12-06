@@ -6,5 +6,18 @@ async function fetchNews(query = '') {
     displayNews(data.articles);
 }
 
-
-
+function displayNews(articles) {
+    const newsContainer = document.getElementById('news-container');
+    newsContainer.innerHTML = '';
+    articles.forEach(article => {
+        const newsItem = `
+        <div class="news-item">
+        <h3>${article.title}</h3>
+        <p>${article.description || ''}</p>
+        <a href="${article.url}" target="_blank">Read More</a>
+        </div>
+        `;
+        newsContainer.innerHTML += newsItem;
+    });
+}
+fetchNews();
