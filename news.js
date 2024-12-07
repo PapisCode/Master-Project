@@ -34,4 +34,15 @@ function displayNews(articles) {
         newsContainer.innerHTML += newsItem;
     });
 }
+
+// input field to detect "Enter" key
+document.getElementById('news-search').addEventListener('keypress', (event) => {
+    if (event.key === 'Enter') {
+        const query = event.target.value.trim();
+        fetchNews(query);
+    } else {
+        document.getElementById('news-container').innerHTML = '<p>Please enter a search.</p>';
+    }
+});
+
 fetchNews();
