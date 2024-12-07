@@ -19,7 +19,9 @@ header {
 header h1 {
     margin: 0;
     font-size: 2.5rem;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    line-height: 1.2;
 }
 
 nav a {
@@ -144,4 +146,29 @@ footer {
     padding: 15px;
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
     border-top: 4px solid #2c2f48;
+}
+
+/* About Page Styles */
+.about-section {
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.about-section h2 {
+    color: #3a3d5e;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    font-size: 2rem;
+}
+
+.about-section p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
 }
