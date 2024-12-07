@@ -1,8 +1,10 @@
 // News
-async function fetchNews(query = '') {
     const apiKey = '7d347fd244a84458a5cf8a7947328c40';
+    // Fetch and Display news based on query, category, or country
+    async function fetchNews(query = '', category = '', country = '') {
     try {
-    const response = await fetch(`https://newsapi.org/v2/top-headlines?language=en&q=${query}&apiKey=${apiKey}`);
+    const url = `https://newsapi.org/v2/top-headlines?language=en&q=${query}&category=${category}&country=${country}&apiKey=${apiKey}`;
+    const response = await fetch(url);
     if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
     }
@@ -19,7 +21,7 @@ async function fetchNews(query = '') {
 function displayNews(articles) {
     const newsContainer = document.getElementById('news-container');
     newsContainer.innerHTML = '';
-    if (articles.length === 0) {
+    if (!articles.length === 0) {
         newsContainer.innerHTML = '<p>No news found.</p>';
         return;
     }
@@ -33,7 +35,50 @@ function displayNews(articles) {
         `;
         newsContainer.innerHTML += newsItem;
     });
+
+    //bookmark button
+    document.querySelectorAll('bookmark-btn').forEach(button => {
+        button.addEventListener('click', (event) => {
+            const title = event.target.getAttribute('data-title');
+            const url = event.target.getAttribute('data-url');
+            saveBookmark(title, url);
+        });
+    });
 }
+
+// Save bookmark to local storage
+function saveBookmark(title, url) {
+    const bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
+    bookmarks.push({ title, url });
+    localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+    alert('Bookmark saved!');
+}
+
+// Show bookmarks in the news container
+function showBookmarks(){
+    const bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
+    const newsContainer = document.getElementById('news-container');
+    newsContainer.innerHTML = '';
+    if (bookmarks.length === 0) {
+        newsContainer.innerHTML = '<p>No bookmarks saved.</p>';
+        return;
+    }
+    bookmarks.forEach(bookmark => {
+        const newsItem = `
+        <div class="news-item">
+        <h3>${bookmark.title}</h3>
+        <a href="${bookmark.url}" target="_blank">Read More</a>
+        </div> 
+        `;
+        newsContainer.innerHTML += newsItem;
+});
+}
+
+//Category Filter
+document.getElementById('news-category').addEventListener('change', (event) => {
+    const category = event.target.value;
+    fetchNews('', category);
+});
 
 // input field to detect "Enter" key
 document.getElementById('news-search').addEventListener('keypress', (event) => {
@@ -44,5 +89,8 @@ document.getElementById('news-search').addEventListener('keypress', (event) => {
         document.getElementById('news-container').innerHTML = '<p>Please enter a search.</p>';
     }
 });
+
+// showing bookmarks
+document.getElementById('show-bookmarks').addEventListener('click', showBookmarks);
 
 fetchNews();
