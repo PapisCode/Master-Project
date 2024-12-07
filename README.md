@@ -22,3 +22,19 @@ as for the world news features I have;
 6. user can view bookmars
 7. category filter
 
+for this project I created 6 branches + the main, once i completed each branch with the features, i merged all the request to the main branch. once the
+the merge was completed, I added addition features to the main branch (hence the additional commits and deployements)
+
+I created my repo at first then cloned my repo using gitbash to my master-project folder
+
+the challenges that i face were;
+1. JavaScript Coding (features for each script were a small  complex)
+2. which Api and where to find the API's
+
+i got the api for the exchange here (https://www.exchangerate-api.com/)
+i got the api for the world news here (https://newsapi.org/)
+
+the easiest part of the master project was the html and the css coding
+
+
+
